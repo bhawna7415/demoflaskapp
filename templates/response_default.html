@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Response</title>
+    <style>
+        table {
+            border-spacing: 10px; /* Adjust the spacing as needed */
+        }
+        th, td {
+            padding: 10px; /* Add padding to cells for spacing */
+        }
+    </style>
+</head>
+<body>
+    <h1>API Response</h1>
+    
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>masterTariffId</th>
+                <th>tariffCode</th>
+                <th>tariffName</th>
+                <th>lseId</th>
+                <th>serviceType</th>
+                <th>customerClass</th>
+                <th>initialEffectiveDate</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in response.results %}
+                <tr>
+                    <td>{{ result.masterTariffId }}</td>
+                    <td>{{ result.tariffCode }}</td>
+                    <td>{{ result.tariffName }}</td>
+                    <td>{{ result.lseId }}</td>
+                    <td>{{ result.serviceType }}</td>
+                    <td>{{ result.customerClass }}</td>
+                    <td>{{ result.initialEffectiveDate }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

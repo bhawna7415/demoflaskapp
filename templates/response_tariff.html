@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Response</title>
+    <style>
+        table {
+            border-spacing: 10px; /* Adjust the spacing as needed */
+        }
+        th, td {
+            padding: 10px; /* Add padding to cells for spacing */
+        }
+    </style>
+</head>
+<body>
+    <h1>API Response</h1>
+    
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>tariffId</th>
+                <th>tariffCode</th>
+                <th>tariffName</th>
+                <th>lseId</th>
+                <th>lseName</th>
+                <th>tariffType</th>
+                <th>customerClass</th>
+                <th>customerCount</th>
+                <th>effectiveDate</th>
+                <th>timeZone</th>
+                <th>billingPeriod</th>
+                <th>currency</th>
+                <th>chargeTypes</th>
+                <th>chargePeriod</th>
+                <th>hasTimeOfUseRates</th>
+                <th>hasTieredRates</th>
+                <th>hasContractedRates</th>
+                <th>hasRateApplicability</th>
+                <th>isActive</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in response.results %}
+                <tr>
+                    <td>{{ result.tariffId }}</td>
+                    <td>{{ result.tariffCode }}</td>
+                    <td>{{ result.tariffName }}</td>
+                    <td>{{ result.lseId }}</td>
+                    <td>{{ result.lseName }}</td>
+                    <td>{{ result.tariffType }}</td>
+                    <td>{{ result.customerClass }}</td>
+                    <td>{{ result.customerCount }}</td>
+                    <td>{{ result.effectiveDate }}</td>
+                    <td>{{ result.timeZone }}</td>
+                    <td>{{ result.billingPeriod }}</td>
+                    <td>{{ result.currency }}</td>
+                    <td>{{ result.chargeTypes }}</td>
+                    <td>{{ result.chargePeriod }}</td>
+                    <td>{{ result.hasTimeOfUseRates }}</td>
+                    <td>{{ result.hasTieredRates }}</td>
+                    <td>{{ result.hasContractedRates }}</td>
+                    <td>{{ result.hasRateApplicability }}</td>
+                    <td>{{ result.isActive }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

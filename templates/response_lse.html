@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Response</title>
+    <style>
+        table {
+            border-spacing: 10px; /* Adjust the spacing as needed */
+        }
+        th, td {
+            padding: 10px; /* Add padding to cells for spacing */
+        }
+    </style>
+</head>
+<body>
+    <h1>API Response</h1>
+    
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>lseId</th>
+                <th>Name</th>
+                <th>Code</th>
+                <th>Website</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in response.results %}
+                <tr>
+                    <td>{{ result.lseId }}</td>
+                    <td>{{ result.name }}</td>
+                    <td>{{ result.code }}</td>
+                    <td><a href="{{ result.websiteHome }}" target="_blank">{{ result.websiteHome }}</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
